@@ -1,0 +1,427 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;    color: white;
+}
+
+html, body{
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow-x: hidden;
+}
+
+#cursor{
+    top: -150px;
+    height: 20px;
+    width: 20px;
+    background-color: greenyellow;
+    border-radius: 50%;
+    position:fixed;
+     
+    z-index: 100;
+    pointer-events: none;
+         
+    
+}
+#cursor-blur{
+     
+    height: 400px;
+    width: 400px;
+    background-color: rgba(172, 255, 47, 0.363);
+    border-radius: 50%;
+    position:fixed;
+    filter: blur(70px);
+    z-index: 5;
+}
+#nav{
+    height: 145px;
+    width: 100%;
+    /* background-color: gray; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 150px;
+    gap: 45px;
+    position: fixed;
+    text-transform: uppercase;
+    z-index: 99;
+}
+#nav img{
+    height: 75px;
+}
+
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -99;
+}
+#main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.545);
+}
+#page1{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+
+#page1 h1{
+    font-size: 140px;
+    font-weight: 900;
+    position: relative;
+    
+}
+#page1 h1::before{
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: black;
+    top: -4px;
+    left: -6px;
+    z-index: -1;
+    -webkit-text-stroke: 3px greenyellow;
+}
+
+#page1 h2{
+    margin-top: 10px;
+    font-size: 30px;
+    font-weight: 800;
+}
+#page1 p {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 50px;
+    width: 40%;
+    z-index: 10;
+}
+
+/* page 2 */
+
+#page2{
+    min-height: 100vh;
+    width: 100vw;
+    z-index: 10;
+}
+
+#scroller{
+    /* background-color: red; */
+    white-space: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+        position: relative;
+        z-index: 10;
+    
+}
+/* to remove scroller  */
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+
+#scroller-in{
+    white-space: nowrap;
+    display: inline-block;
+    animation-name: scroll;
+    animation-duration: 25s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#scroller-in h4{
+    display: inline-block;
+    font-size: 140px;
+    font-weight: 900;
+    font-family: gilroy;
+    margin-right: 10px;
+    color: transparent;
+    transition: all linear 0.3s;
+    -webkit-text-stroke: 2px greenyellow;
+}
+#scroller-in h4:hover{
+    color: greenyellow;
+}
+
+@keyframes scroll{
+    from{
+        transform: translateX(0) ;
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+
+#about-us{
+     
+    height: 40vh;
+     padding: 0  50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    z-index: 10;
+}
+ 
+#about-us img{
+    height: 220px;
+    width: 220px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+#about-us-in{
+    text-align: center;
+    width: 50%;
+}
+#about-us-in h3{
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+#about-us-in p{
+    font-size: 40px;
+    line-height: 40px;
+}
+
+#cards-container{
+    height: 70vh;
+    /* background-color: gray; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    position: relative;
+    z-index: 10;
+
+}
+.cards{
+    border-top: 4px solid;
+    border-left: 4px solid;
+    border-color: greenyellow;
+    height: 60%;
+    width: 24%;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    /* position: relative; */
+    overflow: hidden;
+    transition: all ease-in-out 0.8s;
+}
+
+#card1 {
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+
+#card2 {
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4-1024x1024.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+
+#card3 {
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons-1024x682.jpg?strip=all&lossy=1&sharp=1&ssl=1);
+}
+
+.overlay{
+    height: 100%;
+    width: 100%;
+    background-color: greenyellow;
+    padding: 60px;
+    padding-top:100px;
+    overflow: hidden;
+    transition: all ease-in-out 0.5s;
+    opacity: 0;
+}
+.cards:hover .overlay{
+    opacity: 1;
+}
+
+.cards:hover{
+    scale: 1.1;
+}
+.overlay h4{
+    color: black;
+    font-family: monospace;
+   font-size: 30px;
+   font-weight: 900;
+   margin-bottom: 20px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.overlay p{
+    font-size: 18px;
+    color: black;
+    font-family: monospace;
+}
+
+#green-div{
+     
+    display: flex;
+    height: 30vh;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right top, greenyellow , green);
+    
+}
+#green-div h4{
+    width: 45%;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 50px;
+    text-align: center ;
+    color: black;
+    font-size: 27px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+#green-div img{
+    height: 100%;
+    object-fit: cover;
+    width: 14%;
+}
+
+#page3{
+    position: relative;
+    display: flex;
+    height: 80vh;
+    width: 100%;
+    padding: 100px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    /* background-color: gray; */
+}
+#page3>p{
+    transform: scale(1.1);
+    font-size: 30px;
+    font-weight: 700;
+    width: 75% ;padding: 35px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    line-height: 50px;
+    margin: 50px;
+}
+#page3 #colon1{
+    
+    height: 60px;
+    width: 100px;
+    align-self: flex-start;
+}
+#page3 #colon2{
+    height: 60px;  
+    width: 100px;
+    align-self: flex-end;
+    
+}
+#page4{
+    /* background-color: gray; */
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+    height: 40vh;
+    gap:70px;
+    position: relative;
+}
+.elem{
+    height: 60%;
+    width: 26%;
+    border-radius: 20px;
+    object-fit: cover;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+}
+.elem img{
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+    scale: 1.1;
+    transition: all ease 0.9s;
+}
+.elem h2{
+    height: 100%;
+   width: 100%;
+   background-color: rgba(154, 255, 47, 0.744);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 40px;
+   color: #000;
+   font-weight: 800;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   position: absolute;
+   z-index: 10;
+   transition: all ease-in-out 0.8s;
+}
+
+.elem:hover h2{
+    color: white;
+    background:none;
+}
+.elem:hover img{
+    scale: 1;
+}
+#pg4Hed{
+    text-align: center;
+     
+    font-size: 95px;
+    font-weight: 900;
+    -webkit-text-stroke: greenyellow 2px;
+    color: transparent;
+    position: absolute;
+    top: -15px;
+    left: 40px;
+    right: 40px;
+
+}
+
+#footer{
+    height: 40vh;
+    width: 100vw;
+    background: linear-gradient(to right top, greenyellow, green); 
+    position: relative;
+    overflow: hidden;
+    z-index: -10;
+}
+#footer  #img{
+    position: absolute;
+    height: 100%;
+    object-fit: cover;
+    width: 20%;
+    transform: scaleX(-1);
+    filter: hue-rotate(90deg);
+    opacity: 0.3;    
+    z-index: -1;
+}
+#footer-in{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    left: 10%;
+    align-items: center;
+    gap:150px;
+    
+
+}
+#footer-in img{
+    height: 100px;   
+}
+#h3 h3{
+    color: black;
+    font-size: 25px;
+    font-weight: 800 ;
+}
+#h4 h4{
+    color: black;
+    font-size: 20px;
+    font-weight: 800;
+}
+#h5 h5{
+    font-size: 15px;
+    font-weight: 800;
+    color: black;
+}
